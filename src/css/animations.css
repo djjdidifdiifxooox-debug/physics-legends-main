@@ -1,0 +1,439 @@
+/**
+ * Animations and Transitions
+ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.1);
+    }
+    30% {
+        transform: scale(1);
+    }
+}
+
+@keyframes neon-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+    }
+    20%, 24%, 55% {
+        text-shadow: 0 0 5px rgba(0, 212, 255, 0.4);
+    }
+}
+
+/* Animation Classes */
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+.slide-in-up {
+    animation: slideInUp 0.4s ease-out;
+}
+
+.slide-in-down {
+    animation: slideInDown 0.4s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+.bounce {
+    animation: bounce 0.6s ease-in-out;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.float-up {
+    animation: floatUp 1s ease-out forwards;
+}
+
+.heartbeat {
+    animation: heartbeat 1.3s ease-in-out infinite;
+}
+
+.neon-flicker {
+    animation: neon-flicker 1.5s ease-in-out infinite;
+}
+
+/* Combat Animations */
+
+.damage-number {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.5rem;
+    pointer-events: none;
+    animation: floatUp 1s ease-out forwards;
+}
+
+.damage-number.critical {
+    animation: floatUp 1s ease-out forwards;
+    color: #ff006e;
+    text-shadow: 0 0 10px rgba(255, 0, 110, 0.8);
+    font-size: 2rem;
+}
+
+.damage-number.heal {
+    color: #06d6a0;
+    text-shadow: 0 0 10px rgba(6, 214, 160, 0.8);
+}
+
+.attack-animation {
+    animation: shake 0.3s ease-in-out;
+}
+
+.hit-effect {
+    animation: scaleIn 0.2s ease-out;
+}
+
+.boss-entrance {
+    animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.particle-burst {
+    position: absolute;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #9d4edd, #00d4ff);
+}
+
+@keyframes particle-move {
+    to {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty))) scale(0);
+    }
+}
+
+.particle.animated {
+    animation: particle-move 1s ease-out forwards;
+}
+
+/* XP Animation */
+
+.xp-popup {
+    position: fixed;
+    font-weight: bold;
+    color: #06d6a0;
+    pointer-events: none;
+    animation: floatUp 1.5s ease-out forwards;
+    text-shadow: 0 0 10px rgba(6, 214, 160, 0.8);
+    font-size: 1.5rem;
+    z-index: 100;
+}
+
+/* Level Up Animation */
+
+@keyframes level-up {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-180deg);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5) rotate(180deg);
+    }
+}
+
+.level-up-effect {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    animation: level-up 1.5s ease-out forwards;
+    pointer-events: none;
+    z-index: 200;
+}
+
+/* Transition Effects */
+
+.screen-transition {
+    animation: fadeOut 0.3s ease-out;
+}
+
+.screen-enter {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Button Animations */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease-out;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Card Hover Animation */
+
+.card {
+    transition: all 0.3s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Tooltip Animation */
+
+.tooltip {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+}
+
+.tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Menu Animation */
+
+.menu-enter {
+    animation: slideInUp 0.3s ease-out;
+}
+
+.menu-exit {
+    animation: slideInDown 0.3s ease-in;
+}
+
+/* Dialog Animation */
+
+.dialog-overlay {
+    animation: fadeIn 0.2s ease-out;
+}
+
+.dialog-content {
+    animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Progress Bar Animation */
+
+.progress-fill {
+    transition: width 0.5s ease-out;
+}
+
+.progress-fill.animate {
+    animation: pulse 0.3s ease-out;
+}
+
+/* Combo Counter Animation */
+
+.combo-counter {
+    animation: heartbeat 0.6s ease-in-out;
+}
+
+/* Skill Activation */
+
+.skill-activate {
+    animation: glow 0.5s ease-out;
+}
+
+@keyframes skill-burst {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+.skill-burst {
+    animation: skill-burst 0.5s ease-out;
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
