@@ -1,0 +1,67 @@
+{
+  "name": "Physics Legends - Olympiad Adventure",
+  "short_name": "Physics Legends",
+  "description": "Learn physics through an interactive RPG game. Prepare for olympiads and competitions while saving the world from physics chaos!",
+  "start_url": "/physics-legends-main/",
+  "scope": "/physics-legends-main/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0e27",
+  "theme_color": "#00d4ff",
+  "icons": [
+    {
+      "src": "/physics-legends-main/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/physics-legends-main/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/physics-legends-main/icons/screenshot-540.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/physics-legends-main/icons/screenshot-1280.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["education", "games"],
+  "shortcuts": [
+    {
+      "name": "New Game",
+      "short_name": "Play",
+      "description": "Start a new Physics Legends adventure",
+      "url": "/physics-legends-main/?action=newgame",
+      "icons": [
+        {
+          "src": "/physics-legends-main/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Continue Game",
+      "short_name": "Continue",
+      "description": "Resume your Physics Legends adventure",
+      "url": "/physics-legends-main/?action=continue",
+      "icons": [
+        {
+          "src": "/physics-legends-main/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
